@@ -1,29 +1,46 @@
 local Translations = {
     error = {
-        minimum_store_robbery_police = "No hay suficientes policia (%{MinimumStoreRobberyPolice} son requeridos)",
-        not_driver = "No eres un conductor",
-        demolish_vehicle = "No está permitido derribar vehículos ahora",
-        process_canceled = "Proceso cancelado..",
-        you_broke_the_lock_pick = "Has roto la ganzúa",
+        proccess_cancelled = 'Barra de progreso cancelada',
+        cheatingDetectedDrop = '¡Trampa detectada, has sido expulsado del robo a la tienda!',
+        cheatingDetectedPrint = 'Trampa detectada en el robo a la tienda, ¡jugador expulsado!',
+        invalidRegister = 'Índice de caja registradora inválido.',
+        invalidSafe = 'Índice de caja fuerte inválido.',
+        alreadyRobbed = 'Esta caja registradora ya ha sido robada.',
+        safeRobbed = 'Esta caja fuerte ya ha sido robada.',
+        wrongCode = 'La combinación que ingresaste es incorrecta.',
+        thermiteCooldown = '¡La termita aún no ha atravesado!',
+        notThermited = 'qb-storerobbery:server:thermiteSafe activado pero no había caja fuerte con ese índice. Jugador: ',
     },
-    text = {
-        the_cash_register_is_empty = "La caja registradora está vacía",
-        try_combination = "~g~E~w~ - Ingresa la combinación",
-        safe_opened = "Caja abierta",
-        emptying_the_register= "Vaciando caja registradora..",
-        safe_code = "Código de seguridad: "
+    rob = {
+        register = 'Robando la caja registradora...',
+        plantThermite = 'Colocando termita en la caja fuerte...',
+        thermitePlant = 'Abriendo la caja fuerte...'
     },
-    email = {
-        shop_robbery = "10-31 | Robo en progreso en Tienda",
-        someone_is_trying_to_rob_a_store = "Alguien está tratando de robar una tienda en %{street} (CAMARA ID: %{cameraId1})",
-        storerobbery_progress = "Robo en tienda en progreso"
+    police = {
+        police_alert = '¡Robo en tienda en progreso!',
+        shopRobbery = 'Robo en tienda',
     },
+    inputSafe = {
+        header = 'Combinación de la caja fuerte',
+        submit = 'Enviar',
+    },
+    targets = {
+        robRegister = 'Robar caja registradora',
+        robRegisterIcon = 'fas fa-hand-holding-usd',
+        robRegisterDT = '[F] Robar caja registradora',
+        robSafe = 'Abrir caja fuerte',
+        robSafeIcon = 'fas fa-dungeon',
+        thermiteSafe = 'Termita en caja fuerte',
+        thermiteSafeIcon = 'fas fa-fire',
+        collectFromSafe = 'Recoger de la caja fuerte',
+        collectFromSafeIcon = 'fas fa-box-open',
+        robSafeDT = '[F] Abrir caja fuerte',
+        thermiteSafeDT = '| [G] Termita en caja fuerte',
+        collectFromSafeDT = '[F] Recoger de la caja fuerte',
+    }
 }
 
-if GetConvar('qb_locale', 'en') == 'es' then
-    Lang = Locale:new({
-        phrases = Translations,
-        warnOnMissing = true,
-        fallbackLang = Lang,
-    })
-end
+Lang = Lang or Locale:new({
+    phrases = Translations,
+    warnOnMissing = true
+})

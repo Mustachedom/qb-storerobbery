@@ -1,9 +1,8 @@
 Config = {}
+
 QBCore = exports['qb-core']:GetCoreObject()
-Config.minEarn = 100
-Config.maxEarn = 450
-Config.RegisterEarnings = math.random(Config.minEarn, Config.maxEarn)
+
 Config.MinimumStoreRobberyPolice = 0
-Config.resetTime = (60 * 1000) * 30
-Config.tickInterval = 1000
-Config.stickyNoteChance = 10 -- Percent chance to get the safe code from a cash register
+Config.UseTarget = false
+Config.AlertPoliceRegister = 75 -- percent chance to alert police when a register is robbed
+Config.AlertPoliceSafe = 75 -- percent chance to alert police when a safe is robbed

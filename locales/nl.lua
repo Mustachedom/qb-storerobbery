@@ -1,30 +1,46 @@
 local Translations = {
     error = {
-        minimum_store_robbery_police = "Er is niet genoeg politie, er zijn (%{MinimumStoreRobberyPolice} flikken nodig)",
-        not_driver = "Je bent geen chauffeur",
-        demolish_vehicle = "Je kunt nu geen voertuig kapot maken",
-        process_canceled = "Process gestopt..",
-        you_broke_the_lock_pick = "De lockpick is kapot gegaan, loserke",
+        proccess_cancelled = 'Voortgangsbalk geannuleerd',
+        cheatingDetectedDrop = 'Valsspelen gedetecteerd, je bent verwijderd vanwege een winkeloverval!',
+        cheatingDetectedPrint = 'Valsspelen gedetecteerd bij winkeloverval, speler verwijderd!',
+        invalidRegister = 'Ongeldige kassa-index opgegeven.',
+        invalidSafe = 'Ongeldige kluis-index opgegeven.',
+        alreadyRobbed = 'Deze kassa is al beroofd.',
+        safeRobbed = 'Deze kluis is al beroofd.',
+        wrongCode = 'De ingevoerde combinatie is onjuist.',
+        thermiteCooldown = 'De thermiet is nog niet doorgebrand!',
+        notThermited = 'qb-storerobbery:server:thermiteSafe geactiveerd maar geen kluis met dat index gevonden. Speler: ',
     },
-    text = {
-        the_cash_register_is_empty = "De kassa is leeg",
-        try_combination = "~g~E~w~ - Probeer combinatie",
-        safe_opened = "De kluis is open!",
-        emptying_the_register= "Haalt alles leeg..",
-        safe_code = "Kluis Code: "
+    rob = {
+        register = 'Kassa aan het beroven...',
+        plantThermite = 'Thermiet op de kluis aanbrengen...',
+        thermitePlant = 'Kluis aan het openen...'
     },
-    email = {
-        shop_robbery = "SICAD101 | Winkeloverval",
-        someone_is_trying_to_rob_a_store = "Potentiele winkeloverval %{street} (CAMERA ID: %{cameraId1})",
-        storerobbery_progress = "Er is een winkeloverval bezig!"
+    police = {
+        police_alert = 'Winkeloverval gaande!',
+        shopRobbery = 'Winkeloverval',
     },
+    inputSafe = {
+        header = 'Kluiscombinatie',
+        submit = 'Bevestigen',
+    },
+    targets = {
+        robRegister = 'Kassa beroven',
+        robRegisterIcon = 'fas fa-hand-holding-usd',
+        robRegisterDT = '[F] Kassa beroven',
+        robSafe = 'Kluis openen',
+        robSafeIcon = 'fas fa-dungeon',
+        thermiteSafe = 'Thermiet op kluis',
+        thermiteSafeIcon = 'fas fa-fire',
+        collectFromSafe = 'Verzamel uit kluis',
+        collectFromSafeIcon = 'fas fa-box-open',
+        robSafeDT = '[F] Kluis openen',
+        thermiteSafeDT = '| [G] Thermiet op kluis',
+        collectFromSafeDT = '[F] Verzamel uit kluis',
+    }
 }
 
-if GetConvar('qb_locale', 'en') == 'nl' then
-    Lang = Lang or Locale:new({
-        phrases = Translations,
-        warnOnMissing = true,
-        fallbackLang = Lang,
-    })
-end
-
+Lang = Lang or Locale:new({
+    phrases = Translations,
+    warnOnMissing = true
+})

@@ -1,28 +1,46 @@
 local Translations = {
     error = {
-        minimum_store_robbery_police = "Pas assez de policiers (%{MinimumStoreRobberyPolice} Requis)",
-        not_driver = "Vous n'êtes pas le conducteur",
-        process_canceled = "Annulé..",
-        you_broke_the_lock_pick = "Vous avez cassé l'outil de crochetage",
+        proccess_cancelled = 'Barre de progression annulée',
+        cheatingDetectedDrop = 'Triche détectée, vous avez été expulsé du braquage de magasin !',
+        cheatingDetectedPrint = 'Triche détectée lors du braquage de magasin, joueur expulsé !',
+        invalidRegister = 'Index de caisse invalide.',
+        invalidSafe = 'Index de coffre invalide.',
+        alreadyRobbed = 'Cette caisse a déjà été braquée.',
+        safeRobbed = 'Ce coffre a déjà été braqué.',
+        wrongCode = 'La combinaison saisie est incorrecte.',
+        thermiteCooldown = 'La thermite n’a pas encore percé !',
+        notThermited = 'qb-storerobbery:server:thermiteSafe déclenché mais aucun coffre trouvé avec cet index. Joueur : ',
     },
-    text = {
-        the_cash_register_is_empty = "La caisse est vide",
-        try_combination = "~g~E~w~ - Essayer la combinaison",
-        safe_opened = "Coffre-fort ouvert",
-        emptying_the_register= "Vide la caisse..",
-        safe_code = "Code du Coffre-fort: "
+    rob = {
+        register = 'Braquage de la caisse...',
+        plantThermite = 'Pose de la thermite sur le coffre...',
+        thermitePlant = 'Ouverture du coffre...'
     },
-    email = {
-        shop_robbery = "10-31 | Braquage de superette",
-        someone_is_trying_to_rob_a_store = "Quelqu'un essaie de braquer un magasin à %{street} (ID Caméra: %{cameraId1})",
-        storerobbery_progress = "Braquage de superette en cours"
+    police = {
+        police_alert = 'Braquage de magasin en cours !',
+        shopRobbery = 'Braquage de magasin',
     },
+    inputSafe = {
+        header = 'Combinaison du coffre',
+        submit = 'Soumettre',
+    },
+    targets = {
+        robRegister = 'Braquer la caisse',
+        robRegisterIcon = 'fas fa-hand-holding-usd',
+        robRegisterDT = '[F] Braquer la caisse',
+        robSafe = 'Déverrouiller le coffre',
+        robSafeIcon = 'fas fa-dungeon',
+        thermiteSafe = 'Thermite sur le coffre',
+        thermiteSafeIcon = 'fas fa-fire',
+        collectFromSafe = 'Récupérer du coffre',
+        collectFromSafeIcon = 'fas fa-box-open',
+        robSafeDT = '[F] Déverrouiller le coffre',
+        thermiteSafeDT = '| [G] Thermite sur le coffre',
+        collectFromSafeDT = '[F] Récupérer du coffre',
+    }
 }
 
-if GetConvar('qb_locale', 'en') == 'fr' then
-    Lang = Locale:new({
-        phrases = Translations,
-        warnOnMissing = true,
-        fallbackLang = Lang,
-    })
-end
+Lang = Lang or Locale:new({
+    phrases = Translations,
+    warnOnMissing = true
+})
